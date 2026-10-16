@@ -1,6 +1,6 @@
 # Privacy Policy — Screen Recorder (Chunked Screen Recorder)
 
-Last updated: 2026-10-13
+Last updated: 2026-10-16
 
 ## The short version
 
@@ -20,7 +20,17 @@ and are offered to you for recovery the next time you open the extension.
 
 **Screen content is never transmitted anywhere.** The extension makes no network
 requests of any kind — no analytics, no crash reporting, no update pings, no
-advertising, no cloud sync.
+advertising, no cloud sync. (The only `fetch` in the package reads the
+extension's own bundled translation files from a `chrome-extension://` URL — a
+local file inside the extension, never the network.)
+
+**Microphone (optional — off unless you switch it on).** The microphone switch in
+the popup is the only thing that turns the microphone on, and the first time you
+flip it you are taken to a page that asks for the permission once. While it is
+on, your voice is mixed with the tab's audio on your own machine, written to the
+same local file, and released the moment the recording stops. Unless you turn
+that switch on, no microphone is opened at all. Voice audio is never transmitted
+anywhere.
 
 ## What we collect
 
@@ -29,6 +39,8 @@ Nothing.
 - No account, no email, no sign-in.
 - No usage statistics, no telemetry, no device identifiers.
 - No cookies, no tracking pixels.
+- No audio or video is uploaded. Your voice, like the screen, is only ever
+  written to your own disk.
 
 The developer receives no information about you or about what you record.
 
@@ -41,6 +53,7 @@ The developer receives no information about you or about what you record.
 | `downloads` | Save the finished video file to the location you pick. |
 | `notifications` | Show the recording status and the result of a save in a desktop notification, so you can see what is happening without keeping the popup open. |
 | `activeTab` | Read the title and address of the tab you are on when you click the extension icon, so the recorder knows which tab you mean. Granted only at that moment. |
+| `audioCapture` | Mix your spoken commentary (microphone) into the recording when you turn that switch on. Declared at install because Chromium does not allow this permission to be requested at runtime, but it is used only while the switch is on — with it off, the microphone is never opened, and recordings still work exactly the same. |
 
 The extension requests no host permissions whatsoever. It cannot read or modify
 any website.
@@ -87,6 +100,13 @@ Questions about this policy: a21716423@gmail.com
 
 **屏幕内容不会被发送到任何地方。** 扩展不发起任何网络请求 ——
 没有统计、没有崩溃上报、没有更新检查、没有广告、没有云同步。
+（包里唯一一处 `fetch` 读的是扩展自己打包进去的翻译文件，`chrome-extension://` 本机文件，
+从不走网络。）
+
+**麦克风（可选 —— 开关不开就不会用到）。** 只有弹窗里那个麦克风开关能打开它；
+第一次打开开关时，会带你去一个页面授权一次。开关打开期间，你的解说和你本机上的
+页面声音混合，写进同一个本地文件；录制一停止，麦克风立刻释放。
+开关不开，就不会打开麦克风。语音同样不会发送到任何地方。
 
 ## 我们收集什么
 
@@ -95,6 +115,7 @@ Questions about this policy: a21716423@gmail.com
 - 不用注册、不要邮箱、不用登录
 - 没有使用统计、没有设备标识
 - 没有 cookie、没有跟踪
+- 不上传任何音频或视频：你的声音和画面一样，只写进你自己的硬盘
 
 开发者收不到关于你、或关于你录了什么的任何信息。
 
@@ -107,6 +128,7 @@ Questions about this policy: a21716423@gmail.com
 | `downloads` | 把录好的文件保存到你选的位置。 |
 | `notifications` | 用桌面通知显示录制状态和保存结果，这样不用一直开着弹窗也能知道在发生什么。 |
 | `activeTab` | 你点扩展图标时，读取当前标签页的标题和地址，好让录制知道你要录哪一个。只在这一刻临时授权。 |
+| `audioCapture` | 打开麦克风开关时，把你的解说混进录制文件。因为它**不允许**在运行时申请，只能声明成安装时权限；但只有开关打开时才会用到 —— 开关关着时根本不打开麦克风，录制功能完全不受影响。 |
 
 扩展**没有申请任何网站访问权限**，它无法读取或修改任何网页。
 

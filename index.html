@@ -50,7 +50,7 @@
 <body>
 <main>
 <h1>Privacy Policy — Screen Recorder (Chunked Screen Recorder)</h1>
-<p>Last updated: 2026-10-13</p>
+<p>Last updated: 2026-10-16</p>
 <h2>The short version</h2>
 <p><strong>Nothing you record ever leaves your computer. There is no server.</strong></p>
 <h2>What the extension does with your screen content</h2>
@@ -60,14 +60,17 @@
 <li>written directly to your own disk, in fragments, every half second.</li>
 </ul>
 <p>Completed recordings are saved wherever you choose in the &quot;Save as&quot; dialog. Unfinished recordings stay in your browser&#x27;s private storage on your own disk and are offered to you for recovery the next time you open the extension.</p>
-<p><strong>Screen content is never transmitted anywhere.</strong> The extension makes no network requests of any kind — no analytics, no crash reporting, no update pings, no advertising, no cloud sync.</p>
+<p><strong>Screen content is never transmitted anywhere.</strong> The extension makes no network requests of any kind — no analytics, no crash reporting, no update pings, no advertising, no cloud sync. (The only <code>fetch</code> in the package reads the extension&#x27;s own bundled translation files from a <code>chrome-extension://</code> URL — a local file inside the extension, never the network.)</p>
+<p><strong>Microphone (optional — off unless you switch it on).</strong> The microphone switch in the popup is the only thing that turns the microphone on, and the first time you flip it you are taken to a page that asks for the permission once. While it is on, your voice is mixed with the tab&#x27;s audio on your own machine, written to the same local file, and released the moment the recording stops. Unless you turn that switch on, no microphone is opened at all. Voice audio is never transmitted anywhere.</p>
 <h2>What we collect</h2>
 <p>Nothing.</p>
 <ul>
 <li>No account, no email, no sign-in.</li>
 <li>No usage statistics, no telemetry, no device identifiers.</li>
 <li>No cookies, no tracking pixels.</li>
+<li>No audio or video is uploaded. Your voice, like the screen, is only ever</li>
 </ul>
+<p>written to your own disk.</p>
 <p>The developer receives no information about you or about what you record.</p>
 <h2>Permissions, and why each one exists</h2>
 <div class="tw"><table>
@@ -77,6 +80,7 @@
 <tr><td><code>downloads</code></td><td>Save the finished video file to the location you pick.</td></tr>
 <tr><td><code>notifications</code></td><td>Show the recording status and the result of a save in a desktop notification, so you can see what is happening without keeping the popup open.</td></tr>
 <tr><td><code>activeTab</code></td><td>Read the title and address of the tab you are on when you click the extension icon, so the recorder knows which tab you mean. Granted only at that moment.</td></tr>
+<tr><td><code>audioCapture</code></td><td>Mix your spoken commentary (microphone) into the recording when you turn that switch on. Declared at install because Chromium does not allow this permission to be requested at runtime, but it is used only while the switch is on — with it off, the microphone is never opened, and recordings still work exactly the same.</td></tr>
 </tbody></table></div>
 <p>The extension requests no host permissions whatsoever. It cannot read or modify any website.</p>
 <h2>Third parties</h2>
@@ -98,13 +102,15 @@
 <li>每半秒一次，直接写进你自己的硬盘。</li>
 </ul>
 <p>录完的文件保存在你&quot;另存为&quot;时选的位置。没录完的内容留在你本机浏览器的私有存储里， 下次打开扩展时会提示你恢复。</p>
-<p><strong>屏幕内容不会被发送到任何地方。</strong> 扩展不发起任何网络请求 —— 没有统计、没有崩溃上报、没有更新检查、没有广告、没有云同步。</p>
+<p><strong>屏幕内容不会被发送到任何地方。</strong> 扩展不发起任何网络请求 —— 没有统计、没有崩溃上报、没有更新检查、没有广告、没有云同步。 （包里唯一一处 <code>fetch</code> 读的是扩展自己打包进去的翻译文件，<code>chrome-extension://</code> 本机文件， 从不走网络。）</p>
+<p><strong>麦克风（可选 —— 开关不开就不会用到）。</strong> 只有弹窗里那个麦克风开关能打开它； 第一次打开开关时，会带你去一个页面授权一次。开关打开期间，你的解说和你本机上的 页面声音混合，写进同一个本地文件；录制一停止，麦克风立刻释放。 开关不开，就不会打开麦克风。语音同样不会发送到任何地方。</p>
 <h2>我们收集什么</h2>
 <p>什么都不收集。</p>
 <ul>
 <li>不用注册、不要邮箱、不用登录</li>
 <li>没有使用统计、没有设备标识</li>
 <li>没有 cookie、没有跟踪</li>
+<li>不上传任何音频或视频：你的声音和画面一样，只写进你自己的硬盘</li>
 </ul>
 <p>开发者收不到关于你、或关于你录了什么的任何信息。</p>
 <h2>权限说明（每个都要用到）</h2>
@@ -115,6 +121,7 @@
 <tr><td><code>downloads</code></td><td>把录好的文件保存到你选的位置。</td></tr>
 <tr><td><code>notifications</code></td><td>用桌面通知显示录制状态和保存结果，这样不用一直开着弹窗也能知道在发生什么。</td></tr>
 <tr><td><code>activeTab</code></td><td>你点扩展图标时，读取当前标签页的标题和地址，好让录制知道你要录哪一个。只在这一刻临时授权。</td></tr>
+<tr><td><code>audioCapture</code></td><td>打开麦克风开关时，把你的解说混进录制文件。因为它<strong>不允许</strong>在运行时申请，只能声明成安装时权限；但只有开关打开时才会用到 —— 开关关着时根本不打开麦克风，录制功能完全不受影响。</td></tr>
 </tbody></table></div>
 <p>扩展<strong>没有申请任何网站访问权限</strong>，它无法读取或修改任何网页。</p>
 <h2>第三方</h2>
