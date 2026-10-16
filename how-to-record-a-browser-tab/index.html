@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to record a browser tab with audio and your microphone</title>
+<meta name="description" content="Record one browser tab — video, its audio and optionally your microphone — in Edge or Chrome. Step-by-step, plus what no recorder can capture.">
+<link rel="canonical" href="https://robert0303-c.github.io/how-to-record-a-browser-tab/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chunked Screen Recorder">
+<meta property="og:title" content="How to record a browser tab with audio and your microphone">
+<meta property="og:description" content="Record one browser tab — video, its audio and optionally your microphone — in Edge or Chrome. Step-by-step, plus what no recorder can capture.">
+<meta property="og:url" content="https://robert0303-c.github.io/how-to-record-a-browser-tab/">
+<meta property="og:image" content="https://robert0303-c.github.io/icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to record a browser tab with audio and your microphone">
+<meta name="twitter:description" content="Record one browser tab — video, its audio and optionally your microphone — in Edge or Chrome. Step-by-step, plus what no recorder can capture.">
+<meta name="twitter:image" content="https://robert0303-c.github.io/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to record a browser tab with audio and your microphone", "description": "Record one browser tab — video, its audio and optionally your microphone — in Edge or Chrome. Step-by-step, plus what no recorder can capture.", "url": "https://robert0303-c.github.io/how-to-record-a-browser-tab/", "datePublished": "2026-10-16", "dateModified": "2026-10-16", "inLanguage": "en", "author": {"@type": "Person", "name": "The developer of Chunked Screen Recorder", "description": "Solo developer of the Chunked Screen Recorder browser extension; builds and tests the recorder on Windows 10.", "sameAs": ["https://github.com/Robert0303-C", "https://robert0303-c.github.io/"]}, "publisher": {"@type": "Organization", "name": "Chunked Screen Recorder", "url": "https://robert0303-c.github.io/", "logo": {"@type": "ImageObject", "url": "https://robert0303-c.github.io/icon.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://robert0303-c.github.io/how-to-record-a-browser-tab/"}, "about": {"@type": "SoftwareApplication", "name": "Chunked Screen Recorder", "applicationCategory": "BrowserApplication", "softwareVersion": "0.2.2"}, "citation": [{"@type": "CreativeWork", "name": "chrome.tabCapture API reference", "url": "https://developer.chrome.com/docs/extensions/reference/api/tabCapture"}, {"@type": "CreativeWork", "name": "Audio recording and screen capture — Chrome Extensions guide", "url": "https://developer.chrome.com/docs/extensions/how-to/web-platform/screen-capture"}, {"@type": "CreativeWork", "name": "MediaRecorder API — MDN Web Docs", "url": "https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder"}, {"@type": "TechArticle", "name": "Screen Capture — W3C Working Draft, 23 July 2026", "url": "https://w3.org/TR/2026/WD-screen-capture-20260723"}, {"@type": "TechArticle", "name": "New Ways to do Screen Capture — Windows Developer Blog, 16 September 2019", "url": "https://blogs.windows.com/windowsdeveloper/2019/09/16/new-ways-to-do-screen-capture/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How to record a browser tab with audio and your microphone", "description": "Record one browser tab — video, its audio and optionally your microphone — in Edge or Chrome. Step-by-step, plus what no recorder can capture.", "url": "https://robert0303-c.github.io/how-to-record-a-browser-tab/", "datePublished": "2026-10-16", "totalTime": "PT1M", "tool": [{"@type": "HowToTool", "name": "Microsoft Edge (or a Chromium-based browser)"}, {"@type": "HowToTool", "name": "Chunked Screen Recorder extension"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Install the recorder", "text": "In Microsoft Edge, open the Chunked Screen Recorder listing in the add-ons store and click Get. No account and no companion app are needed."}, {"@type": "HowToStep", "position": 2, "name": "Open the tab you want to record", "text": "Leave that tab in front; tab capture records the tab that was active when you clicked the extension's icon."}, {"@type": "HowToStep", "position": 3, "name": "Click the extension icon", "text": "The popup shows which tab it is going to record."}, {"@type": "HowToStep", "position": 4, "name": "Switch the microphone on if you want your own voice", "text": "The first time, a visible page asks for microphone permission once, because a hidden window cannot receive the prompt."}, {"@type": "HowToStep", "position": 5, "name": "Press Start recording", "text": "A desktop notification confirms the start; recording continues if you close the popup."}, {"@type": "HowToStep", "position": 6, "name": "Do what you were going to do", "text": "The MP4 is already being written to disk every 500 ms."}, {"@type": "HowToStep", "position": 7, "name": "Press Stop and choose where to save", "text": "The saved file is a standard MP4 (H.264 video, AAC audio)."}, {"@type": "HowToStep", "position": 8, "name": "Recover if something went wrong", "text": "Reopen the extension: unfinished recordings are listed, and the recovery page verifies the file plays before calling it recovered."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I record just one tab's audio, without video?", "acceptedAnswer": {"@type": "Answer", "text": "You can mute your microphone and keep the tab's audio, but the output is still a video file containing video plus audio; the extension does not write audio-only files."}}, {"@type": "Question", "name": "Why is my recording black?", "acceptedAnswer": {"@type": "Answer", "text": "Protected video is designed to be uncapturable. Windows implements that with a content-protection flag on SetWindowDisplayAffinity which works by returning black in screen captures of those windows (New Ways to do Screen Capture, Windows Developer Blog, 16 September 2019), and streaming players rely on it. Hardware-accelerated video on some GPUs is the other common cause; disabling hardware acceleration in edge://settings/system usually fixes that."}}, {"@type": "Question", "name": "Why does my recording have no sound?", "acceptedAnswer": {"@type": "Answer", "text": "Either the tab was silent, or the microphone was switched on without its one-time authorisation — we measured that case at -91 dB, i.e. a valid video with a silent audio track. Audio from other tabs is never captured by design."}}, {"@type": "Question", "name": "Can I record a Google Meet, Zoom or Teams call from the browser?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the tab's video and audio are captured like any other tab and your microphone can be mixed in. Recording other participants may require their consent where you live, and a 1080p call produces roughly 1.2 MB per second in our measurements."}}, {"@type": "Question", "name": "Does it record my whole screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. It records exactly one tab; your desktop, other windows and notifications never appear in the file."}}, {"@type": "Question", "name": "Where does the file go while it is still recording?", "acceptedAnswer": {"@type": "Answer", "text": "Into your own disk as playable MP4 fragments in the browser's private extension storage. The finished file is saved where you choose. Nothing is uploaded."}}, {"@type": "Question", "name": "Is there a Chrome version?", "acceptedAnswer": {"@type": "Answer", "text": "It uses standard Chromium extension APIs but is published for Microsoft Edge as of 2026-10-16."}}, {"@type": "Question", "name": "What can't it do?", "acceptedAnswer": {"@type": "Answer", "text": "It does not record the desktop or other applications, does not edit video, does not upload or sync, and does not keep a copy of your recording."}}]}</script>
+<style>
+  :root{
+    --fg:#1a1d21; --muted:#5b636d; --line:#e3e6ea; --bg:#ffffff;
+    --code-bg:#f4f6f8; --accent:#1f6feb;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--fg);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",
+         "Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  main{max-width:760px;margin:0 auto;padding:56px 24px 96px}
+  h1{font-size:28px;line-height:1.3;margin:0 0 4px;letter-spacing:-.02em}
+  h2{font-size:19px;line-height:1.4;margin:38px 0 10px;letter-spacing:-.01em;
+     padding-top:18px;border-top:1px solid var(--line)}
+  h1 + h2, h2:first-of-type{border-top:0;padding-top:0}
+  p{margin:0 0 14px}
+  strong{font-weight:650}
+  code{font:13.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+       background:var(--code-bg);padding:2px 6px;border-radius:4px;
+       border:1px solid var(--line)}
+  ul{margin:0 0 14px;padding-left:22px}
+  li{margin:5px 0}
+  .tw{overflow-x:auto;margin:0 0 18px;-webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;
+        vertical-align:top}
+  th{background:var(--code-bg);font-weight:650}
+  hr{border:0;border-top:1px solid var(--line);margin:0}
+  .langhead{font-size:22px;padding-top:26px;margin-top:56px}
+  .foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
+        font-size:14px;color:var(--muted)}
+  .foot a{color:var(--accent)}
+  .foot p{margin:0 0 6px}
+  @media (max-width:600px){
+    main{padding:34px 18px 64px}
+    h1{font-size:23px}
+    h2{font-size:17px}
+    body{font-size:15px}
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--fg:#e6edf3;--muted:#9aa4af;--line:#2a3138;--bg:#0d1117;
+          --code-bg:#161b22;--accent:#58a6ff}
+  }
+
+  .lede{font-size:17.5px;line-height:1.65;border-left:3px solid var(--accent);
+        padding:2px 0 2px 14px;margin:18px 0 22px}
+  .byline{font-size:14px;color:var(--muted);margin:0 0 20px}
+  .box{background:var(--code-bg);border:1px solid var(--line);border-radius:8px;
+       padding:16px 20px 6px;margin:22px 0}
+  .box p{margin:0 0 8px;font-size:15px}
+  .box ul{margin:0 0 12px;padding-left:20px}
+  .box li{font-size:15px;margin:4px 0}
+  .steps{padding-left:24px}
+  .steps li{margin:9px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>How to record a browser tab with audio (and your microphone) on Windows</h1>
+
+<p class="byline">Written by the developer of <strong>Chunked Screen Recorder</strong> (a solo
+project; code and issue history at <a href="https://github.com/Robert0303-C">github.com/Robert0303-C</a>).
+Last updated <time datetime="2026-10-16">2026-10-16</time>.</p>
+
+<p class="lede"><strong>Short answer:</strong> you do not need to record your whole screen to
+capture one browser tab. Install a tab-recording extension, open the tab you want, click the
+extension icon, press <em>Start</em> — the extension captures that one tab's picture and its
+audio. Turn the microphone switch on if you also want your own voice on the file. Recording a
+single tab takes about 20 seconds to set up and produces a normal MP4 you can play immediately.</p>
+
+<div class="box">
+<p><strong>Key takeaways</strong></p>
+<ul>
+<li>Only one tab is recorded — other tabs, your desktop and your notifications are never in the file.</li>
+<li>The tab's own audio is captured with the tab; your microphone is a separate, opt-in track mixed
+    on your machine.</li>
+<li>Tag or window capture is what "record a tab" means technically: the browser's
+    <code>chrome.tabCapture</code> API hands the tab's video and audio streams to the recorder.</li>
+<li>The recording is written to disk <strong>every 500 ms</strong> while it runs, as a playable
+    MP4 — that interval is the maximum you can lose if the tab dies mid-recording.</li>
+<li>Protected (DRM) video — Netflix, Disney+, some sports streams — comes out black. That is a
+    platform restriction, not a setting you can change.</li>
+</ul>
+</div>
+
+<h2>What counts as "recording a tab"?</h2>
+
+<p>A browser tab is not a screen region or a window. It is a rendering context that the browser
+can hand out separately, which is why a tab recording can include the tab's audio <em>without</em>
+picking up the podcast playing in your other tab, the meeting notification, or your desktop. The
+<a href="https://w3.org/TR/2026/WD-screen-capture-20260723">W3C Screen Capture specification</a>
+makes that distinction explicit: it defines three capture surfaces — <code>monitor</code>,
+<code>window</code> and <code>browser</code>, the last being "a browser display surface, or single
+browser window".</p>
+
+<p>Chromium browsers expose this through the <code>tabCapture</code> extension API, documented at
+<a href="https://developer.chrome.com/docs/extensions/reference/api/tabCapture">developer.chrome.com/docs/extensions/reference/api/tabCapture</a>.
+An extension asks for that stream, encodes it locally, and writes the result to a file. The
+encoder receives periodic data chunks; whether those chunks reach your disk during the recording
+or only at the end is the difference between losing nothing and losing everything
+(see the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">MediaRecorder
+API reference on MDN</a> for how the recorder hands out data).</p>
+
+<h2>Three ways to record a tab, compared</h2>
+
+<div class="tw"><table>
+<thead><tr><th></th><th>Tab-recording extension</th><th>Windows Game Bar (Win+G)</th><th>OBS Studio</th></tr></thead>
+<tbody>
+<tr><td>Captures</td><td>one tab, with its audio</td><td>a window or the desktop</td><td>a window, the desktop, or an app's audio</td></tr>
+<tr><td>Tab's audio</td><td>yes, isolated to that tab</td><td>yes, but all audio from the captured window</td><td>yes, via window capture or application audio capture</td></tr>
+<tr><td>Microphone at the same time</td><td>yes — one switch, mixed locally</td><td>yes, as a separate audio source</td><td>yes, as a separate audio source</td></tr>
+<tr><td>Setup</td><td>install once, then click Start</td><td>built in on Windows 10/11</td><td>install and configure sources, scenes and encoder</td></tr>
+<tr><td>Writes to disk while recording</td><td>every 500 ms</td><td>yes</td><td>yes; a crashed MP4 may need remuxing (MKV avoids that)</td></tr>
+<tr><td>Cost</td><td>free</td><td>free</td><td>free and open source</td></tr>
+</tbody></table></div>
+
+<p>All three are legitimate; they fail in different places. Game Bar cannot isolate one tab's
+audio and records whatever window you point it at. OBS is the most powerful and the slowest to set
+up. A tab-recording extension is the only one of the three that answers "record this tab, nothing
+else" in one click — and, because it writes during the recording, it is also the one that survives
+a browser crash.</p>
+
+<h2>How to record a tab, step by step</h2>
+
+<ol class="steps">
+<li><strong>Install the recorder.</strong> In Microsoft Edge, open
+    <a href="https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf">Chunked Screen Recorder</a> in the add-ons store and click <em>Get</em>.
+    Nothing else needs installing — no account, no companion app.</li>
+<li><strong>Open the tab you want to record</strong> and leave it in front. Tab capture always
+    records the tab that was active when you clicked the extension's icon.</li>
+<li><strong>Click the extension icon</strong> in the toolbar. The popup shows which tab it will
+    record.</li>
+<li><strong>Want your voice on the recording?</strong> Switch the microphone on. The first time,
+    Edge opens a small page that asks for microphone permission once — the permission prompt
+    cannot be answered from the extension's own hidden window, so a visible page is used
+    deliberately. After that the switch remembers your choice.</li>
+<li><strong>Press <em>Start recording</em>.</strong> A desktop notification confirms it started;
+    the recording continues even if you close the popup.</li>
+<li><strong>Do what you were going to do</strong> — watch the lecture, run the demo, take the
+    meeting. The file is already being written while this happens.</li>
+<li><strong>Press <em>Stop</em></strong> and pick a location in the "Save as" dialog. The file is
+    a standard MP4 (H.264 video, AAC audio) that opens in any player.</li>
+<li><strong>If it went wrong anyway, recover instead of re-recording.</strong> Open the extension
+    again: unfinished recordings are listed, and the recovery page makes your own video player
+    decode the file before it is called recovered.</li>
+</ol>
+
+<h2>Why recordings get lost — and what to do about it</h2>
+
+<p>Almost every "my recording is gone" story has the same shape: the recorder held the whole
+recording in memory and only wrote the file when you pressed stop. If the tab crashes, the
+browser is closed, or the machine sleeps and drops the session, the data was never on disk.</p>
+
+<p>Chunked Screen Recorder inverts that: every <strong>500 ms</strong> a finished MP4 fragment is
+closed and written to your disk, so the file on disk is a playable video for the entire
+recording. If a two-hour recording dies at 1:59:00, you still have 1:59:00 — the maximum loss is
+the last half second, not the whole session. Unfinished recordings also stay listed inside the
+extension, and the recovery page makes your own video player decode the file before it is called
+recovered, so "recovered" means "plays", not "a file exists".</p>
+
+<p><strong>Honest limits:</strong> the 500 ms window bounds what a crash can cost, it does not
+make it zero. This does nothing for a full disk, and it cannot help a recording you never
+started. If the source tab is protected content, the fragments are black from the first
+millisecond.</p>
+
+<h2>What we measured (first-party data)</h2>
+
+<p>These are real files, recorded and analysed by us with <code>ffmpeg</code> on one Windows 10
+machine (build 19045, Intel HD Graphics 620 + NVIDIA GeForce 940MX), recording a 1080p video tab.
+Sample size is four recordings — small, reported as measured, not as a benchmark.</p>
+
+<div class="tw"><table>
+<thead><tr><th>Recording</th><th>Length</th><th>File size</th><th>Streams</th><th>Audio level (mean / peak)</th></tr></thead>
+<tbody>
+<tr><td>Tab audio only</td><td>16.4 s</td><td>—</td><td>H.264 1920×1080 + AAC 48 kHz stereo</td><td>−21.0 dB / −0.8 dB</td></tr>
+<tr><td>Tab audio + microphone</td><td>31.1 s</td><td>38.07 MB</td><td>H.264 1920×1080 + AAC 48 kHz stereo</td><td>−17.6 dB / −0.6 dB</td></tr>
+<tr><td>Before microphone authorisation</td><td>21.4 s</td><td>—</td><td>video track present</td><td>−91 dB (silent)</td></tr>
+</tbody></table></div>
+
+<p>Two things are worth reading out of that table. First, adding the microphone to a tab recording
+raises the mean level by <strong>3.4 dB</strong> (−21.0 → −17.6 dB) while the peak stays under
+−0.5 dB, which is what a real two-source mix looks like rather than a duplicated track. Second,
+the third row is the failure mode we hit and fixed during development: mixing a microphone that
+has <em>not</em> been authorised produces a perfectly valid video with a −91 dB (i.e. silent)
+audio track. If your recording is silent, check the microphone switch and its one-time
+authorisation page before suspecting the encoder.</p>
+
+<p>We also inspected the packed extension itself: it makes <strong>zero network requests</strong>.
+The single <code>fetch</code> call in the package reads the extension's own bundled translation
+file from a <code>chrome-extension://</code> URL. That claim is checkable — see the
+<a href="https://robert0303-c.github.io/">privacy policy</a>, which lists all <strong>6</strong> permissions and what
+each one is for.</p>
+
+<h2>Frequently asked questions</h2>
+
+<h3>Can I record just one tab's audio, without video?</h3>
+<p>You can mute your microphone and keep the tab's audio, but the output is still a video file
+containing video plus audio — the extension does not write audio-only files.</p>
+
+<h3>Why is my recording black?</h3>
+<p>Because protected video is built to be uncapturable. Windows implements that with a
+content-protection flag on <code>SetWindowDisplayAffinity</code> which, as Microsoft's own developer
+blog describes it, works by "returning black in screen captures of these windows"
+(<a href="https://blogs.windows.com/windowsdeveloper/2019/09/16/new-ways-to-do-screen-capture/">New
+Ways to do Screen Capture, Windows Developer Blog, 16 September 2019</a>). Netflix, Disney+ and
+similar players use exactly that mechanism — no extension can record them, and that is the point of
+it. The other common cause is unrelated: hardware-accelerated video on some GPUs. Turning off
+hardware acceleration in <code>edge://settings/system</code> and re-recording usually fixes that
+case.</p>
+
+<h3>Why does my recording have no sound?</h3>
+<p>In order: (1) the tab itself may have been silent; (2) if you wanted your own voice, the
+microphone switch must be on and its one-time authorisation granted — an unauthorised
+microphone yields a video with a silent audio track (measured at −91 dB above); (3) audio from
+<em>other</em> tabs is never captured, by design.</p>
+
+<h3>Can I record a Google Meet, Zoom or Teams call from the browser?</h3>
+<p>Yes — the tab's video and audio are captured like any other tab, and your microphone can be
+mixed in on top. Two caveats: recording other people may require their consent where you live,
+and a call running in a heavy web app produces a large file (about 1.2 MB per second at 1080p in
+our measurements).</p>
+
+<h3>Does it record my whole screen?</h3>
+<p>No. It records exactly one tab. Your desktop, other tabs, notifications and other windows are
+never in the file — which is also why a tab recording stays small and legible.</p>
+
+<h3>Where does the file go while it is still recording?</h3>
+<p>Into your own disk, in the browser's private extension storage, as playable MP4 fragments.
+When you press stop, the completed file is saved wherever you choose. Nothing is uploaded at any
+point.</p>
+
+<h3>Is there a Chrome version?</h3>
+<p>It is built on standard Chromium extension APIs, but as of 2026-10-16 it is published for Microsoft
+Edge only. <a href="https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf">The Edge listing is here</a>.</p>
+
+<h3>What can't it do?</h3>
+<p>It does not record your desktop or other applications, it does not edit video, it does not
+upload or sync anything, and it does not keep a copy of your recording for you. It records a tab
+and writes the result to your disk; everything outside that is out of scope on purpose.</p>
+
+<h2 id="zh">中文版：怎么录浏览器标签页的视频</h2>
+
+<p class="byline">同样的问题，中文说法是"怎么单独录一个浏览器标签页的视频（带声音、带自己的解说）"。
+下面是要点；英文部分有完整的对比表和实测数据。最后更新 <time datetime="2026-10-16">2026-10-16</time>。</p>
+
+<h3>怎么录？</h3>
+<p>装一个标签页录制扩展 → 打开要录的那个标签页 → 点扩展图标 → 按"开始录制"。录的是
+<strong>那一个标签页</strong>，你桌面上的其他东西、其他标签页、系统通知都不会进到文件里。想把自己的解说也录进去，
+打开麦克风开关（第一次会让你在一个页面上授权一次）。</p>
+
+<h3>为什么录到一半丢了？</h3>
+<p>大多数录屏工具把整段录制先放在内存里，等你按"停止"才写文件——这中间崩了、关了浏览器，数据就没了。
+这个扩展<strong>每 500 毫秒</strong>就把一个完整的 MP4 片段写到你的硬盘上，所以硬盘上的文件在录制期间一直是
+能播放的：录了两小时崩在 1:59:00，你手上还有 1:59:00，最多丢最后半秒。</p>
+
+<h3>为什么录出来是黑的？</h3>
+<p>受保护的视频（Netflix、Disney+ 这类）任何录屏 API 都录不了，只能录成黑屏——这是平台限制，不是设置问题。
+另一种情况是某些显卡的硬件加速，把 <code>edge://settings/system</code> 里的硬件加速关掉再录通常就好了。</p>
+
+<h3>为什么没有声音？</h3>
+<p>可能是那个标签页本身就没出声；也可能是你开了麦克风开关但还没授权——没授权的麦克风会录出一个
+"画面正常、音轨静音（实测 −91 dB）"的文件。另外：别的标签页的声音是**故意**不录的。</p>
+
+<h3>会上传吗？收费吗？</h3>
+<p>不上传，也免费。扩展一共申请 <strong>6</strong> 个权限、没有任何网站访问权限，全程
+<strong>零网络请求</strong>（包里唯一一处 <code>fetch</code> 读的是扩展自带的翻译文件）。细节见
+<a href="https://robert0303-c.github.io/">隐私政策</a>。</p>
+<footer class="foot">
+<p><strong>Chunked Screen Recorder</strong> v0.2.2 — free tab recorder for Microsoft Edge.
+<a href="https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf">Add to Microsoft Edge</a> · <a href="https://robert0303-c.github.io/">Privacy policy</a> ·
+<a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a></p>
+<p><strong>Sources</strong> (all verifiable):
+<a href="https://developer.chrome.com/docs/extensions/reference/api/tabCapture">chrome.tabCapture API reference</a> ·
+<a href="https://developer.chrome.com/docs/extensions/how-to/web-platform/screen-capture">Chrome: audio recording and screen capture</a> ·
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">MDN: MediaRecorder</a> ·
+<a href="https://w3.org/TR/2026/WD-screen-capture-20260723">W3C Screen Capture (Working Draft, 2026-07-23)</a> ·
+<a href="https://blogs.windows.com/windowsdeveloper/2019/09/16/new-ways-to-do-screen-capture/">Windows Developer Blog: content protection returns black in captures</a> ·
+plus the first-party measurements above.</p>
+<p>How we measured: four recordings of a 1080p video tab on Windows 10 build 19045
+(Intel HD Graphics 620, NVIDIA GeForce 940MX), analysed with <code>ffmpeg</code> for duration,
+stream layout and audio levels. Small sample, reported as-is.</p>
+<p>Written and maintained by the developer of Chunked Screen Recorder. Version 0.2.2 ·
+<time datetime="2026-10-16">last updated 2026-10-16</time>.</p>
+</footer>
+</main>
+</body>
+</html>

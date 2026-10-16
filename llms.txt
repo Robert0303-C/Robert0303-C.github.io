@@ -15,10 +15,14 @@
   notifications, activeTab, audioCapture
 - Microphone: opt-in, off by default; voice is mixed locally and never transmitted
 - Where files go: your own disk, in the location you pick, written every 500 ms
+- Records to: a standard MP4 (H.264 video + AAC 48 kHz stereo), written to disk every 500 ms
 - Store page: https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf
 
 ## Key pages
 
+- [How to record a browser tab with audio and your microphone](https://robert0303-c.github.io/how-to-record-a-browser-tab/):
+  the step-by-step answer, a comparison with Windows Game Bar and OBS Studio, our own first-party
+  measurements (four recordings analysed with ffmpeg), and the failure modes we hit and fixed.
 - [Privacy policy](https://robert0303-c.github.io/): exactly what the extension does with screen and microphone data.
   The short answer: nothing leaves your computer.
 - [robots.txt](https://robert0303-c.github.io/robots.txt) · [sitemap.xml](https://robert0303-c.github.io/sitemap.xml)
