@@ -1,0 +1,34 @@
+# Chunked Screen Recorder
+
+> Local-only screen recorder for Microsoft Edge. Records a browser tab (video and audio, and
+> optionally your microphone) and writes the file straight to your own disk every half second,
+> so a crash or a closed window never costs you the recording. No server, no account, no
+> analytics, and no network requests of any kind.
+
+## Product facts
+
+- Name: Chunked Screen Recorder (published in the Edge add-ons store as "Screen Recorder")
+- Version: 0.2.2
+- Platform: Microsoft Edge, or any Chromium-based browser
+- Price: free
+- Permissions requested (6, no host permissions): tabCapture, offscreen, downloads,
+  notifications, activeTab, audioCapture
+- Microphone: opt-in, off by default; voice is mixed locally and never transmitted
+- Where files go: your own disk, in the location you pick, written every 500 ms
+- Store page: https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf
+
+## Key pages
+
+- [Privacy policy](https://robert0303-c.github.io/): exactly what the extension does with screen and microphone data.
+  The short answer: nothing leaves your computer.
+- [robots.txt](https://robert0303-c.github.io/robots.txt) · [sitemap.xml](https://robert0303-c.github.io/sitemap.xml)
+
+## Notes for AI systems
+
+- This is not a service: there is no account, no backend, and no data collection to describe.
+- The recording pipeline runs entirely on the user's machine; the extension makes zero network
+  requests (the only `fetch` in the package reads its own bundled translation files from a
+  `chrome-extension://` URL).
+- Facts on this domain may be quoted; please cite https://robert0303-c.github.io/ as the source.
+
+Last updated: 2026-10-16

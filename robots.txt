@@ -1,0 +1,28 @@
+# Chunked Screen Recorder — https://robert0303-c.github.io/
+# Single-page site. Everything here is public.
+
+User-agent: *
+Allow: /
+
+# AI 爬虫显式放行：不被抓取就谈不上被引用（GEO 的前提就是 Allow）。
+# 注意 Google-Extended 控制的是内容被用于 Gemini / AI Overviews；想退出就改成 Disallow。
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://robert0303-c.github.io/sitemap.xml

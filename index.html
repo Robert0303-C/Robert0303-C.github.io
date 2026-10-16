@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — Screen Recorder (Chunked Screen Recorder)</title>
 <meta name="description" content="Privacy policy for the Chunked Screen Recorder browser extension. Nothing you record leaves your computer. No server, no analytics, no network requests.">
+<link rel="canonical" href="https://robert0303-c.github.io/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chunked Screen Recorder">
+<meta property="og:title" content="Privacy Policy — Screen Recorder (Chunked Screen Recorder)">
+<meta property="og:description" content="Privacy policy for the Chunked Screen Recorder browser extension. Nothing you record leaves your computer. No server, no analytics, no network requests.">
+<meta property="og:url" content="https://robert0303-c.github.io/">
+<meta property="og:image" content="https://robert0303-c.github.io/icon.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Privacy Policy — Screen Recorder (Chunked Screen Recorder)">
+<meta name="twitter:description" content="Privacy policy for the Chunked Screen Recorder browser extension. Nothing you record leaves your computer. No server, no analytics, no network requests.">
+<meta name="twitter:image" content="https://robert0303-c.github.io/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Chunked Screen Recorder", "alternateName": "Screen Recorder", "applicationCategory": "BrowserApplication", "softwareVersion": "0.2.2", "operatingSystem": "Windows, macOS, Linux, ChromeOS", "description": "Chunked Screen Recorder records a browser tab (screen and audio, optionally your microphone) and writes the file straight to your own disk every half second, so a crash or a closed window never costs you the recording. No server, no account, no analytics, no network requests.", "url": "https://robert0303-c.github.io/", "installUrl": "https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf", "downloadUrl": "https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf", "isAccessibleForFree": true, "privacyPolicy": "https://robert0303-c.github.io/", "browserRequirements": "Requires Microsoft Edge or another Chromium-based browser", "featureList": ["Records a browser tab's video and audio", "Writes the file to disk every half second, so a crash does not lose the recording", "Optional microphone commentary, mixed locally", "No server, no account, no analytics, no network requests"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Chunked Screen Recorder", "url": "https://robert0303-c.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Chunked Screen Recorder", "url": "https://robert0303-c.github.io/", "inLanguage": ["en", "zh-CN"], "publisher": {"@type": "Organization", "name": "Chunked Screen Recorder"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does Chunked Screen Recorder need the tabCapture permission?", "acceptedAnswer": {"@type": "Answer", "text": "Capture the contents of the tab you choose to record. This is the core function."}}, {"@type": "Question", "name": "Why does Chunked Screen Recorder need the offscreen permission?", "acceptedAnswer": {"@type": "Answer", "text": "Run the recorder in a hidden document so recording continues even if you close the popup."}}, {"@type": "Question", "name": "Why does Chunked Screen Recorder need the downloads permission?", "acceptedAnswer": {"@type": "Answer", "text": "Save the finished video file to the location you pick."}}, {"@type": "Question", "name": "Why does Chunked Screen Recorder need the notifications permission?", "acceptedAnswer": {"@type": "Answer", "text": "Show the recording status and the result of a save in a desktop notification, so you can see what is happening without keeping the popup open."}}, {"@type": "Question", "name": "Why does Chunked Screen Recorder need the activeTab permission?", "acceptedAnswer": {"@type": "Answer", "text": "Read the title and address of the tab you are on when you click the extension icon, so the recorder knows which tab you mean. Granted only at that moment."}}, {"@type": "Question", "name": "Why does Chunked Screen Recorder need the audioCapture permission?", "acceptedAnswer": {"@type": "Answer", "text": "Mix your spoken commentary (microphone) into the recording when you turn that switch on. Declared at install because Chromium does not allow this permission to be requested at runtime, but it is used only while the switch is on — with it off, the microphone is never opened, and recordings still work exactly the same."}}]}</script>
 <style>
   :root{
     --fg:#1a1d21; --muted:#5b636d; --line:#e3e6ea; --bg:#ffffff;
@@ -35,6 +54,11 @@
         vertical-align:top}
   th{background:var(--code-bg);font-weight:650}
   hr{border:0;border-top:1px solid var(--line);margin:0}
+  .langhead{font-size:22px;padding-top:26px;margin-top:56px}
+  .foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);
+        font-size:14px;color:var(--muted)}
+  .foot a{color:var(--accent)}
+  .foot p{margin:0 0 6px}
   @media (max-width:600px){
     main{padding:34px 18px 64px}
     h1{font-size:23px}
@@ -91,7 +115,7 @@
 <p>If this policy ever changes, the updated version will be posted at this URL and the &quot;Last updated&quot; date above will change.</p>
 <h2>Contact</h2>
 <p>Questions about this policy: a21716423@gmail.com</p>
-<h1 id="zh">隐私政策（中文版）</h1>
+<h2 id="zh" class="langhead">隐私政策（中文版）</h2>
 <p>最后更新：2026-10-13</p>
 <h2>一句话总结</h2>
 <p><strong>你录的任何东西都不会离开你的电脑。没有服务器。</strong></p>
@@ -128,6 +152,11 @@
 <p>没有。数据不会被共享、出售或转移 —— 因为根本没有收集。</p>
 <h2>联系方式</h2>
 <p>关于本政策的问题：a21716423@gmail.com</p>
+<footer class="foot">
+<p>Chunked Screen Recorder — free, local-only tab recorder for Microsoft Edge.</p>
+<p><a href="https://microsoftedge.microsoft.com/addons/detail/ffdbajddfednooahhlenfbpknafponnf">Add to Microsoft Edge</a> · <a href="/llms.txt">llms.txt</a> · <a href="/sitemap.xml">sitemap.xml</a> · <a href="/robots.txt">robots.txt</a></p>
+<p>This page is one static file: no JavaScript, no fonts to download, no network requests.</p>
+</footer>
 </main>
 </body>
 </html>
